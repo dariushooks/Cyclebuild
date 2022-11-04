@@ -1,0 +1,94 @@
+{
+  "bicycles": {
+    "And6dOJyI7BHT0tS2aewtXM2n1bR8GCX": {
+      "id": "And6dOJyI7BHT0tS2aewtXM2n1bR8GCX",
+      "imageUrl": [
+        "bicycle_a_1",
+        "bicycle_a_2",
+        "bicycle_a_3"
+      ],
+      "name": "Bicycle A"
+    },
+    "BMahMoLSSEkUKbYNZ3AhMRuupgtjRPpD": {
+      "id": "BMahMoLSSEkUKbYNZ3AhMRuupgtjRPpD",
+      "imageUrl": [
+        "bicycle_b_1",
+        "bicycle_b_2",
+        "bicycle_b_3"
+      ],
+      "name": "Bicycle B"
+    },
+    "ChKpMRu9VQAqocI8zafBFyqS6Y6wlqI9": {
+      "id": "ChKpMRu9VQAqocI8zafBFyqS6Y6wlqI9",
+      "imageUrl": [
+        "bicycle_a_1",
+        "bicycle_a_2",
+        "bicycle_a_3"
+      ],
+      "name": "Bicycle C"
+    },
+    "D0Z2ICfgCqbb9X2mY2qfSTiL3OacWpl3": {
+      "id": "D0Z2ICfgCqbb9X2mY2qfSTiL3OacWpl3",
+      "imageUrl": [
+        "bicycle_b_1",
+        "bicycle_b_2",
+        "bicycle_b_3"
+      ],
+      "name": "Bicycle D"
+    }
+  },
+  "parts": {
+    "1OSoCSIGwNhcmATI9WHadh3WYyFREYYB": {
+      "compatible": [
+        "Bicycle D"
+      ],
+      "description": "A seatpost wedge compatible with the 2019 S3 Rim and Disc models.",
+      "id": "1OSoCSIGwNhcmATI9WHadh3WYyFREYYB",
+      "imageUrl": [
+        "part_1_1",
+        "part_1_2"
+      ],
+      "name": "Bicycle Part 1"
+    },
+    "2ApcHj0vV2nenXJ8ZMsgLey5R2kJ8OCw": {
+      "compatible": [
+        "Bicycle A",
+        "Bicycle B"
+      ],
+      "description": "As their name implies, the Short Reach handlebars are designed for those that require a shorter reach in order to obtain the optimal bike fit. Along these lines, they feature a 65mm reach (which is about 10 to 15mm shorter than \"average\") and a shallow 125mm drop. This also comes with the added benefit of increased control at the hoods and levers. And for the construction, we selected a lightweight, yet highly durable, 6061 Premium Butted Aluminum that's sure to stand up to years of hard riding. 6062 premium butted aluminum, high-strength design. Short reach for optimal brake/shift control. Shallow Bend Drop: 125mm drop x 65mm reach",
+      "id": "2ApcHj0vV2nenXJ8ZMsgLey5R2kJ8OCw",
+      "imageUrl": [
+        "part_2_1",
+        "part_2_2"
+      ],
+      "name": "Bicycle Part 2"
+    },
+    "34ySsD3kuzGsT6WZO4OKSLP5Imw6tOlI": {
+      "compatible": [
+        "Bicycle B",
+        "Bicycle C"
+      ],
+      "description": "A seatpost wedge compatible with the 2019 S3 Rim and Disc models.",
+      "id": "34ySsD3kuzGsT6WZO4OKSLP5Imw6tOlI",
+      "imageUrl": [
+        "part_1_1",
+        "part_1_2"
+      ],
+      "name": "Bicycle Part 3"
+    },
+    "4cwKQe225MqtlHtqHGpM9oaCbWKffegl": {
+      "compatible": [
+        "Bicycle A",
+        "Bicycle B",
+        "Bicycle C"
+      ],
+      "description": "As their name implies, the Short Reach handlebars are designed for those that require a shorter reach in order to obtain the optimal bike fit. Along these lines, they feature a 65mm reach (which is about 10 to 15mm shorter than \"average\") and a shallow 125mm drop. This also comes with the added benefit of increased control at the hoods and levers. And for the construction, we selected a lightweight, yet highly durable, 6061 Premium Butted Aluminum that's sure to stand up to years of hard riding. 6062 premium butted aluminum, high-strength design. Short reach for optimal brake/shift control. Shallow Bend Drop: 125mm drop x 65mm reach",
+      "id": "4cwKQe225MqtlHtqHGpM9oaCbWKffegl",
+      "imageUrl": [
+        "part_2_1",
+        "part_2_2"
+      ],
+      "name": "Bicycle Part 4"
+    }
+  }
+}

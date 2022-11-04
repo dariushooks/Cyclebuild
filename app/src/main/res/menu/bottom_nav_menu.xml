@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragment_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_nav_home"
+        android:title="@string/nav_home"/>
+
+    <item
+        android:id="@+id/fragment_bicycle"
+        android:enabled="true"
+        android:icon="@drawable/ic_nav_bike"
+        android:title="@string/nav_bike"/>
+
+    <item
+        android:id="@+id/fragment_parts"
+        android:enabled="true"
+        android:icon="@drawable/ic_nav_parts"
+        android:title="@string/nav_parts"/>
+</menu>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.rookieandroid.cyclebuild.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/fragment_bicycle"
+        android:name="com.rookieandroid.cyclebuild.fragments.BicycleFragment"
+        android:label="Bicycle"
+        tools:layout="@layout/fragment_bicycle">
+        <action
+            android:id="@+id/action_fragment_bicycle_to_fragment_vehicle"
+            app:destination="@id/fragment_vehicle" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_parts"
+        android:name="com.rookieandroid.cyclebuild.fragments.PartsFragment"
+        android:label="Parts"
+        tools:layout="@layout/fragment_parts">
+        <action
+            android:id="@+id/action_fragment_parts_to_fragment_part"
+            app:destination="@id/fragment_part" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_vehicle"
+        android:name="com.rookieandroid.cyclebuild.fragments.VehicleFragment"
+        android:label="Vehicle"
+        tools:layout="@layout/fragment_vehicle"/>
+
+    <fragment
+        android:id="@+id/fragment_part"
+        android:name="com.rookieandroid.cyclebuild.fragments.PartFragment"
+        android:label="Part"
+        tools:layout="@layout/fragment_part">
+
+        <argument
+            android:name="part_object"
+            app:argType="com.rookieandroid.cyclebuild.Part"/>
+    </fragment>
+
+</navigation>

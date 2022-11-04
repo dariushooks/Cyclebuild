@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Cyclebuild</string>
+    <string name="nav_home">HOME</string>
+    <string name="nav_bike">BICYCLES</string>
+    <string name="nav_parts">PARTS</string>
+    <string name="cyclebuild">CYCLEBUILD</string>
+    <string name="welcome_to_cyclebuild">WELCOME TO CYCLEBUILD</string>
+    <string name="part_compatibility_checker">PART COMPATIBILITY CHECKER</string>
+    <string name="about_us">ABOUT US</string>
+    <string name="what_is_cyclebuild">What is Cyclebuild?</string>
+    <string name="about_us_text">Mechanics all over have experienced the issue with part compatibility. We think something will work, but then something gets in the way and we\'re out of luck. On Cyclebuild, the community can weigh in and verify compatibility on a variety of vehicles, so you don\'t have to worry about compatibility guesswork any longer.</string>
+    <string name="your_vehicles">YOUR VEHICLES</string>
+    <string name="suggested_parts">SUGGESTED PARTS</string>
+    <string name="parts_title">PARTS</string>
+    <string name="vehicles_title">VEHICLES</string>
+    <string name="vehicle_title">VEHICLE</string>
+    <string name="installed_parts">INSTALLED PARTS</string>
+    <string name="no_parts_installed">NO PARTS INSTALLED</string>
+    <string name="no_compatible_vehicles">NO COMPATIBLE VEHICLES</string>
+    <string name="add_vehicle">ADD VEHICLE</string>
+    <string name="add_to_vehicle">ADD TO VEHICLE</string>
+    <string name="part_title">PART</string>
+    <string name="compatability_text">COMPATABILITY</string>
+</resources>

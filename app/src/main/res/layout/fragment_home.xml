@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/titleContainer"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cyclebuild"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/titleContainer"
+            app:layout_constraintEnd_toEndOf="@id/titleContainer"
+            app:layout_constraintTop_toTopOf="@id/titleContainer"
+            app:layout_constraintBottom_toBottomOf="@id/titleContainer"/>
+
+        <ImageView
+            android:id="@+id/banner_image"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:alpha=".9"
+            android:src="@drawable/banner"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleContainer"/>
+
+        <TextView
+            android:id="@+id/welcome_text_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="@string/welcome_to_cyclebuild"
+            android:textColor="@color/white"
+            android:textStyle="bold|italic"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/banner_image"/>
+
+        <TextView
+            android:id="@+id/welcome_text_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/part_compatibility_checker"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome_text_one"/>
+        
+        <TextView
+            android:id="@+id/about_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/about_us"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/banner_image"/>
+
+        <TextView
+            android:id="@+id/what_is_cyclebuild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/what_is_cyclebuild"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about_us"/>
+
+        <TextView
+            android:id="@+id/about_us_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/about_us_text"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/what_is_cyclebuild"/>
+
+        <ImageView
+            android:id="@+id/about_image"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/image_background"
+            android:clipToOutline="true"
+            android:src="@drawable/about_image"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about_us_text"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vehicle_part_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about_image"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/your_vehicles_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="@string/your_vehicles"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
+            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintTop_toTopOf="@id/vehicle_part_container"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/your_vehicles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
+            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintTop_toBottomOf="@id/your_vehicles_text"/>
+
+        <TextView
+            android:id="@+id/suggested_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="@string/suggested_parts"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
+            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintTop_toBottomOf="@id/your_vehicles"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/suggested_parts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
+            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintTop_toBottomOf="@id/suggested_text"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
