@@ -56,18 +56,24 @@
         app:layout_constraintStart_toStartOf="@id/dialog_container"
         app:layout_constraintTop_toBottomOf="@id/add_to_vehicle_text"/>
 
-    <ImageView
-        android:id="@+id/part_image"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/part_image_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/image_background"
-        android:padding="2dp"
-        android:clipToOutline="true"
-        android:src="@drawable/part_1_1"
+        app:cardCornerRadius="20dp"
         app:layout_constraintStart_toStartOf="@id/dialog_container"
-        app:layout_constraintTop_toBottomOf="@id/instruction_text"/>
+        app:layout_constraintTop_toBottomOf="@id/instruction_text">
+
+        <ImageView
+            android:id="@+id/part_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/part_1_1"/>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/part_name"
@@ -77,9 +83,9 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/part_image"
-        app:layout_constraintTop_toTopOf="@id/part_image"
-        app:layout_constraintBottom_toBottomOf="@id/part_image"/>
+        app:layout_constraintStart_toEndOf="@id/part_image_container"
+        app:layout_constraintTop_toTopOf="@id/part_image_container"
+        app:layout_constraintBottom_toBottomOf="@id/part_image_container"/>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/vehicle_search"
@@ -96,7 +102,7 @@
         app:iconifiedByDefault="false"
         app:layout_constraintStart_toStartOf="@id/dialog_container"
         app:layout_constraintEnd_toEndOf="@id/dialog_container"
-        app:layout_constraintTop_toBottomOf="@id/part_image"/>
+        app:layout_constraintTop_toBottomOf="@id/part_image_container"/>
 
     <include
         android:id="@+id/compatible_empty"
