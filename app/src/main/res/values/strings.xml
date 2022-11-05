@@ -16,9 +16,16 @@
     <string name="vehicle_title">VEHICLE</string>
     <string name="installed_parts">INSTALLED PARTS</string>
     <string name="no_parts_installed">NO PARTS INSTALLED</string>
+    <string name="no_suggested">NONE</string>
     <string name="no_compatible_vehicles">NO COMPATIBLE VEHICLES</string>
+    <string name="no_results">NO RESULTS</string>
+    <string name="no_vehicles">NO VEHICLES</string>
     <string name="add_vehicle">ADD VEHICLE</string>
     <string name="add_to_vehicle">ADD TO VEHICLE</string>
     <string name="part_title">PART</string>
     <string name="compatability_text">COMPATABILITY</string>
+    <string name="close_dialog">CLOSE</string>
+    <string name="compatible_part">Compatible</string>
+    <string name="not_compatible_part">Not Compatible</string>
+    <string name="select_vehicle">Select a vehicle to add this part to</string>
 </resources>

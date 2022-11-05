@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Button
+        android:id="@+id/close_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="@string/close_dialog"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/dialog_container"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/image_background"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/close_dialog"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/add_to_vehicle_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/add_to_vehicle"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/dialog_container"
+        app:layout_constraintTop_toTopOf="@id/dialog_container"/>
+
+    <TextView
+        android:id="@+id/instruction_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/select_vehicle"
+        android:textColor="@color/dark_grey"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/dialog_container"
+        app:layout_constraintTop_toBottomOf="@id/add_to_vehicle_text"/>
+
+    <ImageView
+        android:id="@+id/part_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/image_background"
+        android:padding="2dp"
+        android:clipToOutline="true"
+        android:src="@drawable/part_1_1"
+        app:layout_constraintStart_toStartOf="@id/dialog_container"
+        app:layout_constraintTop_toBottomOf="@id/instruction_text"/>
+
+    <TextView
+        android:id="@+id/part_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/part_image"
+        app:layout_constraintTop_toTopOf="@id/part_image"
+        app:layout_constraintBottom_toBottomOf="@id/part_image"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/vehicle_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/image_background"
+        android:backgroundTint="@color/light_grey"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:searchIcon="@drawable/ic_search"
+        app:queryBackground="@null"
+        app:queryHint="Search by year, type, name, etc."
+        app:iconifiedByDefault="false"
+        app:layout_constraintStart_toStartOf="@id/dialog_container"
+        app:layout_constraintEnd_toEndOf="@id/dialog_container"
+        app:layout_constraintTop_toBottomOf="@id/part_image"/>
+
+    <include
+        android:id="@+id/compatible_empty"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        layout="@layout/empty_list"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/dialog_container"
+        app:layout_constraintEnd_toEndOf="@id/dialog_container"
+        app:layout_constraintTop_toBottomOf="@id/vehicle_search"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_container"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/compatible_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="@id/dialog_container"
+        app:layout_constraintEnd_toEndOf="@id/dialog_container"
+        app:layout_constraintTop_toBottomOf="@id/vehicle_search"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_container"
+        tools:listitem="@layout/compatible_list_item"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
