@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/part_image_container"
+        android:id="@+id/bike_image_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -17,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/part_image"
+            android:id="@+id/bike_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/bicycle_a_1"
@@ -26,7 +26,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/part_name"
+        android:id="@+id/bike_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -34,8 +34,8 @@
         android:textSize="16sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/part_image_container"
-        app:layout_constraintTop_toTopOf="@id/part_image_container"/>
+        app:layout_constraintStart_toEndOf="@id/bike_image_container"
+        app:layout_constraintTop_toTopOf="@id/bike_image_container"/>
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_compatible"
@@ -62,8 +62,8 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/part_image_container"
-        app:layout_constraintBottom_toBottomOf="@id/part_image_container"/>
+        app:layout_constraintStart_toEndOf="@id/bike_image_container"
+        app:layout_constraintBottom_toBottomOf="@id/bike_image_container"/>
 
     <ImageView
         android:id="@+id/part_not_compatible_image"
@@ -76,8 +76,8 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/part_image_container"
-        app:layout_constraintBottom_toBottomOf="@id/part_image_container"/>
+        app:layout_constraintStart_toEndOf="@id/bike_image_container"
+        app:layout_constraintBottom_toBottomOf="@id/bike_image_container"/>
 
     <TextView
         android:id="@+id/part_compatible_text"

@@ -28,8 +28,8 @@ class CompatibleVehicleAdapter(private val part : Part, private val bikes : Arra
     class CompatibleVehicleViewHolder(itemView : View, private val part: Part, private val bikes: ArrayList<Bicycle>, private val onItemClick: (position: Int) -> Unit) :
         RecyclerView.ViewHolder(itemView), View.OnClickListener
     {
-        private val image : ImageView = itemView.findViewById(R.id.part_image)
-        private val name : TextView = itemView.findViewById(R.id.part_name)
+        private val image : ImageView = itemView.findViewById(R.id.bike_image)
+        private val name : TextView = itemView.findViewById(R.id.bike_name)
         private val compatible : Group = itemView.findViewById(R.id.group_compatible)
         private val notCompatible : Group = itemView.findViewById(R.id.group_not_compatible)
 
