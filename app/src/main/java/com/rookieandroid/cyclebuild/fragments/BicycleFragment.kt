@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,7 +26,7 @@ class BicycleFragment : Fragment(R.layout.fragment_bicycle)
         super.onViewCreated(view, savedInstanceState)
         bicycleRecycler = view.findViewById(R.id.bicycle_list)
         val layoutManager = LinearLayoutManager(context)
-        val adapter = BicycleAdapter(bicycles, {position -> onItemClick(position)})
+        val adapter = BicycleAdapter(bicycles) { position -> onItemClick(position) }
         bicycleRecycler.layoutManager = layoutManager
         bicycleRecycler.adapter = adapter
         bicycleRecycler.setHasFixedSize(true)
@@ -41,7 +42,8 @@ class BicycleFragment : Fragment(R.layout.fragment_bicycle)
     {
         //val bundle = bundleOf("images" to bicycles[position].imageUrl, "name" to bicycles[position].name)
         val bike = bicycles[position]
-        val action = BicycleFragmentDirections.actionFragmentBicycleToFragmentVehicle(bike)
-        findNavController().navigate(action)
+        val action = BicycleFragmentDirections.actionFragmentBicycleToFragmentAddVehicle(bike)
+        val optionsBuilder = NavOptions.Builder().setLaunchSingleTop(true)
+        findNavController().navigate(action, optionsBuilder.build())
     }
 }

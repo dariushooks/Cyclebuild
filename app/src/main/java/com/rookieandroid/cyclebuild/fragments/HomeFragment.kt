@@ -2,12 +2,17 @@ package com.rookieandroid.cyclebuild.fragments
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavOptions
+import androidx.navigation.NavOptionsBuilder
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.rookieandroid.cyclebuild.Bicycle
 import com.rookieandroid.cyclebuild.Part
 import com.rookieandroid.cyclebuild.R
@@ -16,7 +21,7 @@ import com.rookieandroid.cyclebuild.adapters.EmptyDataObserver
 import com.rookieandroid.cyclebuild.adapters.PartsAdapter
 import com.rookieandroid.cyclebuild.architecture.HomeViewModel
 
-class HomeFragment : Fragment(R.layout.fragment_home)
+class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener
 {
     private lateinit var vehicleRecyclerView : RecyclerView
     private lateinit var partRecyclerView: RecyclerView
@@ -24,9 +29,16 @@ class HomeFragment : Fragment(R.layout.fragment_home)
     private lateinit var emptyVehicleMessage : TextView
     private lateinit var emptyPartView : View
     private lateinit var emptyPartMessage : TextView
+    private lateinit var signout : ImageView
     private val bikes : ArrayList<Bicycle> = ArrayList()
     private val parts : ArrayList<Part> = ArrayList()
     private val homeViewModel : HomeViewModel by activityViewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        super.onCreate(savedInstanceState)
+        homeViewModel.loadBikes()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
@@ -35,9 +47,12 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         emptyVehicleMessage = emptyVehicleView.findViewById(R.id.empty_list_message)
         emptyVehicleMessage.text = getString(R.string.no_vehicles)
 
+        signout = view.findViewById(R.id.sign_out)
+        signout.setOnClickListener(this)
+
         vehicleRecyclerView = view.findViewById(R.id.your_vehicles)
         val vehicleLayoutManager = LinearLayoutManager(context)
-        val vehicleAdapter = BicycleAdapter(bikes, {position -> onItemClick(position) })
+        val vehicleAdapter = BicycleAdapter(bikes) { position -> onVehicleClick(position) }
         vehicleRecyclerView.layoutManager = vehicleLayoutManager
         vehicleRecyclerView.adapter = vehicleAdapter
         vehicleRecyclerView.addItemDecoration(DividerItemDecoration(context, vehicleLayoutManager.orientation))
@@ -49,7 +64,7 @@ class HomeFragment : Fragment(R.layout.fragment_home)
 
         partRecyclerView = view.findViewById(R.id.suggested_parts)
         val partLayoutManager = LinearLayoutManager(context)
-        val partAdapter = PartsAdapter(parts, {position ->  onItemClick(position)})
+        val partAdapter = PartsAdapter(parts) { position -> onPartClick(position) }
         partRecyclerView.layoutManager = partLayoutManager
         partRecyclerView.adapter = partAdapter
         partAdapter.registerAdapterDataObserver(EmptyDataObserver(partRecyclerView, emptyPartView))
@@ -67,5 +82,31 @@ class HomeFragment : Fragment(R.layout.fragment_home)
         }
     }
 
-    private fun onItemClick(position : Int) {}
+    override fun onClick(v: View?)
+    {
+        when(v?.id)
+        {
+            signout.id -> {
+                FirebaseAuth.getInstance().signOut()
+                homeViewModel.setToggle(false)
+                findNavController().navigateUp()
+            }
+        }
+    }
+
+    private fun onVehicleClick(position : Int)
+    {
+        val bike = bikes[position]
+        val action = HomeFragmentDirections.actionFragmentHomeToFragmentVehicle(bike)
+        val optionsBuilder = NavOptions.Builder().setLaunchSingleTop(true)
+        findNavController().navigate(action, optionsBuilder.build())
+    }
+
+    private fun onPartClick(position: Int)
+    {
+        val part = parts[position]
+        val action = HomeFragmentDirections.actionFragmentHomeToFragmentPart(part)
+        val optionsBuilder = NavOptions.Builder().setLaunchSingleTop(true)
+        findNavController().navigate(action, optionsBuilder.build())
+    }
 }

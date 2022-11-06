@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,8 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/titleContainer"
@@ -34,110 +34,15 @@
             app:layout_constraintBottom_toBottomOf="@id/titleContainer"/>
 
         <ImageView
-            android:id="@+id/banner_image"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:alpha=".9"
-            android:src="@drawable/banner"
-            android:scaleType="fitXY"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleContainer"/>
-
-        <TextView
-            android:id="@+id/welcome_text_one"
+            android:id="@+id/sign_out"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:text="@string/welcome_to_cyclebuild"
-            android:textColor="@color/white"
-            android:textStyle="bold|italic"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/banner_image"/>
-
-        <TextView
-            android:id="@+id/welcome_text_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/part_compatibility_checker"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome_text_one"/>
-        
-        <TextView
-            android:id="@+id/about_us"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="@string/about_us"
-            android:textColor="@color/grey"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/banner_image"/>
-
-        <TextView
-            android:id="@+id/what_is_cyclebuild"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:text="@string/what_is_cyclebuild"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/about_us"/>
-
-        <TextView
-            android:id="@+id/about_us_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="@string/about_us_text"
-            android:textSize="15sp"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/what_is_cyclebuild"/>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/about_image_container"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="0dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/about_us_text">
-
-            <ImageView
-                android:id="@+id/about_image"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/about_image"/>
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/vehicle_part_container"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/about_image_container"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_sign_out"
+            app:layout_constraintEnd_toEndOf="@id/titleContainer"
+            app:layout_constraintTop_toTopOf="@id/titleContainer"
+            app:layout_constraintBottom_toBottomOf="@id/titleContainer"
+            app:tint="@color/red" />
 
         <TextView
             android:id="@+id/your_vehicles_text"
@@ -148,9 +53,9 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
-            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
-            app:layout_constraintTop_toTopOf="@id/vehicle_part_container"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"/>
 
         <include
             android:id="@+id/empty_vehicles"
@@ -158,8 +63,8 @@
             android:layout_height="wrap_content"
             layout="@layout/empty_list"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
-            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/your_vehicles_text"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -167,8 +72,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/light_grey"
-            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
-            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/your_vehicles_text"
             tools:listitem="@layout/bicycle_list_item"/>
 
@@ -181,8 +86,8 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
-            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/your_vehicles"/>
 
         <include
@@ -191,8 +96,8 @@
             android:layout_height="wrap_content"
             layout="@layout/empty_list"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
-            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/suggested_text"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -200,8 +105,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/light_grey"
-            app:layout_constraintStart_toStartOf="@id/vehicle_part_container"
-            app:layout_constraintEnd_toEndOf="@id/vehicle_part_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/suggested_text"
             tools:listitem="@layout/part_list_item"/>
 

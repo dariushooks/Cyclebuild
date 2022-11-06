@@ -23,7 +23,7 @@
         android:id="@+id/dialog_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/image_background"
+        android:background="@drawable/edit_text_background"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +63,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
         app:layout_constraintStart_toStartOf="@id/dialog_container"
         app:layout_constraintTop_toBottomOf="@id/instruction_text">
 
@@ -91,7 +92,7 @@
         android:id="@+id/vehicle_search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/image_background"
+        android:background="@drawable/edit_text_background"
         android:backgroundTint="@color/light_grey"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -125,5 +126,50 @@
         app:layout_constraintTop_toBottomOf="@id/vehicle_search"
         app:layout_constraintBottom_toBottomOf="@id/dialog_container"
         tools:listitem="@layout/compatible_list_item"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/install_success_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="dialog_success,added_success,added_success_text"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_success"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/edit_text_background"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/close_dialog"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/added_success"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_compatible"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintStart_toStartOf="@id/dialog_success"
+        app:layout_constraintEnd_toEndOf="@id/dialog_success"
+        app:layout_constraintTop_toTopOf="@id/dialog_success"
+        app:layout_constraintBottom_toTopOf="@id/added_success_text"
+        app:tint="@color/green" />
+
+    <TextView
+        android:id="@+id/added_success_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/part_added_successfully"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/dialog_success"
+        app:layout_constraintEnd_toEndOf="@id/dialog_success"
+        app:layout_constraintTop_toBottomOf="@id/added_success"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_success"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,3 +9,5 @@ data class Bicycle(val id : String = "", val name : String = "", val imageUrl : 
 @Parcelize
 data class Part(val id : String = "", val name : String = "", val description : String = "", val compatible : ArrayList<String> = ArrayList(),
                 val imageUrl : ArrayList<String> = ArrayList()) : Parcelable
+
+data class User(val email : String = "", val uid : String = "")
