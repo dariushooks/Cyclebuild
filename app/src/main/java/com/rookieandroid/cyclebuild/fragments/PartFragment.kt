@@ -45,8 +45,8 @@ class PartFragment : Fragment(R.layout.fragment_part), View.OnClickListener
 
         super.onViewCreated(view, savedInstanceState)
         part = args.partObject
-        images = part.imageUrl//arguments?.getStringArrayList("images") as ArrayList<String>
-        bikes = part.compatible//arguments?.getStringArrayList("compatible") as ArrayList<String>
+        images = part.imageUrl
+        bikes = part.compatible
 
         emptyView = view.findViewById(R.id.empty_list)
         emptyMessage = emptyView.findViewById(R.id.empty_list_message)
@@ -56,13 +56,13 @@ class PartFragment : Fragment(R.layout.fragment_part), View.OnClickListener
         back.setOnClickListener(this)
 
         name = view.findViewById(R.id.part_name)
-        name.text = part.name//arguments?.getString("name")
+        name.text = part.name
 
         addToVehicle = view.findViewById(R.id.add_to_vehicle)
         addToVehicle.setOnClickListener(this)
 
         description = view.findViewById(R.id.part_description)
-        description.text = part.description//arguments?.getString("description")
+        description.text = part.description
 
         viewPager = view.findViewById(R.id.image_list)
         viewPager.adapter = ImagePagerAdapter(this, images)

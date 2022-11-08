@@ -17,16 +17,10 @@ class HomeViewModel : ViewModel()
     private val bicycles : MutableLiveData<List<Bicycle>> = MutableLiveData<List<Bicycle>>()
     private val suggested : MutableLiveData<List<Part>> = MutableLiveData<List<Part>>()
     private val installed : MutableLiveData<List<Part>> = MutableLiveData<List<Part>>()
-    private val navToggle : MutableLiveData<Boolean> = MutableLiveData<Boolean>()
 
     private val vehicles : ArrayList<Bicycle> = ArrayList()
     private val suggestedParts : ArrayList<Part> = ArrayList()
     private val installedParts : ArrayList<Part> = ArrayList()
-
-    init { navToggle.value = false }
-
-    fun setToggle(flag : Boolean) { navToggle.value = flag }
-    fun getToggle() : LiveData<Boolean> { return navToggle }
 
     fun addBicycle(bike : Bicycle)
     {
@@ -82,6 +76,7 @@ class HomeViewModel : ViewModel()
             dbRef.child("vehicles").child(auth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot)
                 {
+                    vehicles.clear()
                     for(snap in snapshot.children)
                     {
                         val bike = snap.getValue(Bicycle::class.java)

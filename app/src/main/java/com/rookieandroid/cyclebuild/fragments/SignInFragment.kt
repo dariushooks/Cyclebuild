@@ -23,15 +23,13 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in), View.OnClickListener
     private lateinit var password : TextInputEditText
     private lateinit var login : Button
     private lateinit var signUp : TextView
-    private val homeViewModel : HomeViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         if(auth.currentUser != null)
         {
-            homeViewModel.setToggle(true)
-            findNavController().navigate(R.id.action_fragment_sign_in_to_fragment_home)
+            findNavController().navigate(R.id.nav_logged_in)
         }
     }
 
@@ -90,8 +88,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in), View.OnClickListener
                 {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(context?.packageName, "signInWithEmail:success")
-                    homeViewModel.setToggle(true)
-                    findNavController().navigate(R.id.action_fragment_sign_in_to_fragment_home)
+                    findNavController().navigate(R.id.nav_logged_in)
                     //updateUI(user)
                 }
 

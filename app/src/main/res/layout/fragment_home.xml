@@ -11,27 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/titleContainer"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:background="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="@string/cyclebuild"
             android:textSize="30sp"
             android:textStyle="bold|italic"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/titleContainer"
-            app:layout_constraintEnd_toEndOf="@id/titleContainer"
-            app:layout_constraintTop_toTopOf="@id/titleContainer"
-            app:layout_constraintBottom_toBottomOf="@id/titleContainer"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
             android:id="@+id/sign_out"
@@ -39,23 +30,33 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:src="@drawable/ic_sign_out"
-            app:layout_constraintEnd_toEndOf="@id/titleContainer"
-            app:layout_constraintTop_toTopOf="@id/titleContainer"
-            app:layout_constraintBottom_toBottomOf="@id/titleContainer"
-            app:tint="@color/red" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:tint="@color/red"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"/>
 
         <TextView
             android:id="@+id/your_vehicles_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_marginTop="10dp"
             android:text="@string/your_vehicles"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title"/>
+            app:layout_constraintTop_toBottomOf="@id/divider"/>
 
         <include
             android:id="@+id/empty_vehicles"
@@ -76,6 +77,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/your_vehicles_text"
             tools:listitem="@layout/bicycle_list_item"/>
+
+
 
         <TextView
             android:id="@+id/suggested_text"

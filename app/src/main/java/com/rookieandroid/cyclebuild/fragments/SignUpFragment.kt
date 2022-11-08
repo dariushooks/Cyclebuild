@@ -27,7 +27,6 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener
     private lateinit var password : TextInputEditText
     private lateinit var signUp : Button
     private lateinit var signIn : TextView
-    private val homeViewModel : HomeViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
@@ -90,9 +89,8 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener
                 {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(context?.packageName, "createUserWithEmail:success")
-                    homeViewModel.setToggle(true)
                     addNewUserToDatabase(email.text.toString(), auth.currentUser?.uid!!)
-                    findNavController().navigate(R.id.action_fragment_sign_up_to_fragment_home)
+                    findNavController().navigate(R.id.fragment_home)
                     //updateUI(user)
                 }
                 else

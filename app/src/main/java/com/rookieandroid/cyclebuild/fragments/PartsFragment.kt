@@ -37,7 +37,6 @@ class PartsFragment : Fragment(R.layout.fragment_parts)
 
     private fun onItemClick(position : Int)
     {
-        val bundle = bundleOf("part" to parts[position])
         val part = parts[position]
         val action = PartsFragmentDirections.actionFragmentPartsToFragmentPart(part)
         findNavController().navigate(action)

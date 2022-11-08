@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.TransitionInflater
 import com.google.firebase.auth.FirebaseAuth
 import com.rookieandroid.cyclebuild.Bicycle
 import com.rookieandroid.cyclebuild.Part
@@ -88,7 +89,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener
         {
             signout.id -> {
                 FirebaseAuth.getInstance().signOut()
-                homeViewModel.setToggle(false)
                 findNavController().navigateUp()
             }
         }
@@ -98,15 +98,13 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener
     {
         val bike = bikes[position]
         val action = HomeFragmentDirections.actionFragmentHomeToFragmentVehicle(bike)
-        val optionsBuilder = NavOptions.Builder().setLaunchSingleTop(true)
-        findNavController().navigate(action, optionsBuilder.build())
+        findNavController().navigate(action)
     }
 
     private fun onPartClick(position: Int)
     {
         val part = parts[position]
         val action = HomeFragmentDirections.actionFragmentHomeToFragmentPart(part)
-        val optionsBuilder = NavOptions.Builder().setLaunchSingleTop(true)
-        findNavController().navigate(action, optionsBuilder.build())
+        findNavController().navigate(action)
     }
 }

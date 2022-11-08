@@ -40,10 +40,9 @@ class BicycleFragment : Fragment(R.layout.fragment_bicycle)
 
     private fun onItemClick(position : Int)
     {
-        //val bundle = bundleOf("images" to bicycles[position].imageUrl, "name" to bicycles[position].name)
         val bike = bicycles[position]
         val action = BicycleFragmentDirections.actionFragmentBicycleToFragmentAddVehicle(bike)
-        val optionsBuilder = NavOptions.Builder().setLaunchSingleTop(true)
-        findNavController().navigate(action, optionsBuilder.build())
+        val optionsBuilder = NavOptions.Builder().setLaunchSingleTop(true).build()
+        findNavController().navigate(action)
     }
 }

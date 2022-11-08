@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_login"
+    app:startDestination="@id/fragment_sign_in">
+
+    <fragment
+        android:id="@+id/fragment_sign_in"
+        android:name="com.rookieandroid.cyclebuild.fragments.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
+
+        <action
+            android:id="@+id/action_fragment_sign_in_to_fragment_sign_up"
+            app:destination="@id/fragment_sign_up"
+            app:enterAnim="@anim/slide_in"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_sign_up"
+        android:name="com.rookieandroid.cyclebuild.fragments.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up"/>
+
+</navigation>

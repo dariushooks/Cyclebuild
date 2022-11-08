@@ -44,7 +44,7 @@ class VehicleFragment : Fragment(R.layout.fragment_vehicle), View.OnClickListene
     {
         super.onViewCreated(view, savedInstanceState)
         vehicle = args.bicycleObject
-        images = vehicle.imageUrl//arguments?.getStringArrayList("images") as ArrayList<String>
+        images = vehicle.imageUrl
 
         emptyView = view.findViewById(R.id.empty_list)
         emptyMessage = emptyView.findViewById(R.id.empty_list_message)
@@ -54,7 +54,7 @@ class VehicleFragment : Fragment(R.layout.fragment_vehicle), View.OnClickListene
         back.setOnClickListener(this)
 
         name = view.findViewById(R.id.vehicle_name)
-        name.text = vehicle.name//arguments?.getString("name")
+        name.text = vehicle.name
 
         view.findViewById<Button?>(R.id.add_vehicle).visibility = View.GONE
 
