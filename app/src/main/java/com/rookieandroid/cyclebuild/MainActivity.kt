@@ -3,16 +3,11 @@ package com.rookieandroid.cyclebuild
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
-import androidx.core.view.isVisible
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.rookieandroid.cyclebuild.architecture.HomeViewModel
 
 class MainActivity : AppCompatActivity()
 {

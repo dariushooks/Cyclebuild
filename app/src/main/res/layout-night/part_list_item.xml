@@ -4,39 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/bicycle_item">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/bicycle_image_container"
-        android:layout_width="0dp"
+        android:id="@+id/part_image_container"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/bicycle_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:id="@+id/part_image"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:scaleType="fitXY"
-            android:src="@drawable/bicycle_a_1"/>
+            android:src="@drawable/part_1_1"/>
 
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/bicycle_name"
+        android:id="@+id/part_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:textSize="20sp"
-        android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bicycle_image_container"/>
-
-
+        app:layout_constraintStart_toEndOf="@id/part_image_container"
+        app:layout_constraintTop_toTopOf="@id/part_image_container"
+        app:layout_constraintBottom_toBottomOf="@id/part_image_container"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
